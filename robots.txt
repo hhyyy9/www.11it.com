@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://hhyyy9.github.io/www/sitemap.xml 
