@@ -1,12 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://hhyyy9.github.io/www/blog/2013/05/22/xin-wen-zhang-ming-cheng/</loc>
+        <lastmod>2013-05-22T11:07:30+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://hhyyy9.github.io/www/blog/2013/05/22/ce-shi-fa-bu/</loc>
+        <lastmod>2013-05-22T11:58:50+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://hhyyy9.github.io/www/blog/archives/</loc>
-        <lastmod>2013-05-22T10:50:52+08:00</lastmod>
+        <lastmod>2013-05-22T11:58:50+08:00</lastmod>
     </url>
     <url>
         <loc>http://hhyyy9.github.io/www/</loc>
-        <lastmod>2013-05-22T10:50:52+08:00</lastmod>
+        <lastmod>2013-05-22T11:58:50+08:00</lastmod>
     </url>
     <url>
         <loc>http://hhyyy9.github.io/www/robots.txt</loc>
