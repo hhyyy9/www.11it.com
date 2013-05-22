@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://hhyyy9.github.io/www/sitemap.xml 
+Sitemap: http://www.11it.com/sitemap.xml 

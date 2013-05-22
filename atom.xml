@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://hhyyy9.github.io/www/atom.xml" rel="self"/>
-  <link href="http://hhyyy9.github.io/www/"/>
-  <updated>2013-05-22T12:02:08+08:00</updated>
-  <id>http://hhyyy9.github.io/www/</id>
+  <title><![CDATA[11IT]]></title>
+  <link href="http://www.11it.com/atom.xml" rel="self"/>
+  <link href="http://www.11it.com/"/>
+  <updated>2013-05-22T12:07:05+08:00</updated>
+  <id>http://www.11it.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Jacky]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,18 +15,18 @@
   
   <entry>
     <title type="html"><![CDATA[测试发布]]></title>
-    <link href="http://hhyyy9.github.io/www/blog/2013/05/22/ce-shi-fa-bu/"/>
+    <link href="http://www.11it.com/blog/2013/05/22/ce-shi-fa-bu/"/>
     <updated>2013-05-22T11:58:00+08:00</updated>
-    <id>http://hhyyy9.github.io/www/blog/2013/05/22/ce-shi-fa-bu</id>
+    <id>http://www.11it.com/blog/2013/05/22/ce-shi-fa-bu</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[新文章名称]]></title>
-    <link href="http://hhyyy9.github.io/www/blog/2013/05/22/xin-wen-zhang-ming-cheng/"/>
+    <link href="http://www.11it.com/blog/2013/05/22/xin-wen-zhang-ming-cheng/"/>
     <updated>2013-05-22T11:07:00+08:00</updated>
-    <id>http://hhyyy9.github.io/www/blog/2013/05/22/xin-wen-zhang-ming-cheng</id>
+    <id>http://www.11it.com/blog/2013/05/22/xin-wen-zhang-ming-cheng</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
