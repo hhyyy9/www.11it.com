@@ -4,7 +4,7 @@
   <title><![CDATA[11IT]]></title>
   <link href="http://www.11it.com/atom.xml" rel="self"/>
   <link href="http://www.11it.com/"/>
-  <updated>2013-05-22T13:41:28+08:00</updated>
+  <updated>2013-05-22T14:11:36+08:00</updated>
   <id>http://www.11it.com/</id>
   <author>
     <name><![CDATA[Jacky]]></name>
@@ -14,19 +14,37 @@
 
   
   <entry>
+    <title type="html"><![CDATA[消息称谷歌原生版Galaxy S4仅在美国发行]]></title>
+    <link href="http://www.11it.com/blog/2013/05/22/xiao-xi-cheng-gu-ge-yuan-sheng-ban-galaxy-s4jin-zai-mei-guo-fa-xing/"/>
+    <updated>2013-05-22T13:48:00+08:00</updated>
+    <id>http://www.11it.com/blog/2013/05/22/xiao-xi-cheng-gu-ge-yuan-sheng-ban-galaxy-s4jin-zai-mei-guo-fa-xing</id>
+    <content type="html"><![CDATA[<blockquote>5月22日消息，据国外媒体报道，科技网站CNET英国版声称，谷歌日前透露，原生安卓版Galaxy S4将于6月26日上市，且仅在美国发行，售价649美元。CNET称，谷歌拒绝透露，该公司最终是否会把这款手机推向全球其他国家。 Phonearena猜测，将原生Galaxy S4推向全球市场应该主要存在两个阻碍。</blockquote>
+
+
+<p><img src="http://img.cnbeta.com/newsimg/130522/1341180729668608.jpg" alt="Galaxy S4" /></p>
+
+<p><em>消息称谷歌原生版Galaxy S4仅在美国发行（TechWeb配图）</em></p>
+
+<p>第一阻碍是LTE网络兼容问题。谷歌在开发者上 称，原生Galaxy S4兼容美国运营商T-Mobile和AT&amp;T的LTE网络，此外并未透露其他细节。因此，有理由预测，原生Galaxy S4并非支持所有LTE网络，这会成为阻碍其进入广泛全球市场的一个因素。</p>
+
+<p>第二阻碍是与三星公司的协议。谷歌原生版Galaxy S4与三星版Galaxy S4存在直接竞争关系，考虑后者刚刚在全球发行不久，三星应该和谷歌签署的一些协议，确保三星版Galaxy S4在全球市场的销量不受太大影响。因此，这个阻碍会近一步限制谷歌原生版Galaxy S4发行市场范围。</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[测试发布]]></title>
-    <link href="http://www.11it.com/ce-shi-fa-bu.html/"/>
+    <link href="http://www.11it.com/blog/2013/05/22/ce-shi-fa-bu/"/>
     <updated>2013-05-22T11:58:00+08:00</updated>
-    <id>http://www.11it.com/ce-shi-fa-bu</id>
+    <id>http://www.11it.com/blog/2013/05/22/ce-shi-fa-bu</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[新文章名称]]></title>
-    <link href="http://www.11it.com/xin-wen-zhang-ming-cheng.html/"/>
+    <link href="http://www.11it.com/blog/2013/05/22/xin-wen-zhang-ming-cheng/"/>
     <updated>2013-05-22T11:07:00+08:00</updated>
-    <id>http://www.11it.com/xin-wen-zhang-ming-cheng</id>
+    <id>http://www.11it.com/blog/2013/05/22/xin-wen-zhang-ming-cheng</id>
     <content type="html"><![CDATA[
 ]]></content>
   </entry>
