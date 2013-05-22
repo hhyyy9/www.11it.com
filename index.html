@@ -9,7 +9,7 @@
   <meta name="author" content="Jacky">
 
   
-  <meta name="description" content=" Arch 是我真正使用的第一款 Linux 发行版，大约使用了三年， 现在的这个 VPS 跑的系统也是 Arch。 然而随着时间变化，我从最早的天天更新狂，到一周、一个月、三个月和不主动更新。 彻底从从不折腾会死星人变成了一个尽量避免变更的老用户。 ">
+  <meta name="description" content="原文链接：Keeping Instagram up with over a million new users in twelve hours 这周二我们发布了 Instagram for Android，反响空前强烈。 最近这几周我们一直（在基础设施方面）做负载计划，为所有可能发生的事故做准备 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +83,62 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/05/22/ru-he-rang-instagram-zai-%5B%3F%5D-bai-duo-mo-yong-hu-bao-zha-hou-wen-ding-yun-xing/">如何让 Instagram 在一百多万用户爆炸后稳定运行</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-22T15:23:00+08:00" pubdate data-updated="true">2013年05月22日 15:23</time>
+        
+         | <a href="/blog/2013/05/22/ru-he-rang-instagram-zai-%5B%3F%5D-bai-duo-mo-yong-hu-bao-zha-hou-wen-ding-yun-xing/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>原文链接：Keeping Instagram up with over a million new users in twelve hours</p>
+
+<blockquote>
+这周二我们发布了 Instagram for Android，反响空前强烈。 最近这几周我们一直（在基础设施方面）做负载计划，为所有可能发生的事故做准备。 尽管如此，在发布那天，最大的挑战仍然是如何快速定位问题，找到瓶颈并尽快修复他们。 在这里我们将分享一些帮助我们解决问题的工具和技术。
+</blockquote>
+
+
+<h2>statsd</h2>
+
+<p>statsd 在 Instagram 很受欢迎。这是 Etsy 写的一个网络监控器， 能够统计并图形化数据。它有两种核心的统计方式：计数器和计时器。 我们用计数器来跟踪许多信息，从每秒钟注册数到喜欢数量统计。 同时我们使用计时器来跟踪 feeds 变化，用户停留在 feeds 多久，和其他的主要操作。</p>
+
+<p>我们喜欢 statsd 的最大原因是它能迅速将状态显示并图形化出来。 Stats 几乎是实时的（在我们系统中有 10 秒钟的延时） 帮助我们评估系统状况和代码变化情况。 Stats 可以随意启用，当我们需要跟踪时，能够快速启用它。 你可以指定一个取样密度，来均匀的查看 web 应用概况， 而不会影响它运行效率。</p>
+
+<p>总结：实时统计可以动态添加，帮助你线上诊断而无须等待问题重现。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/05/22/ru-he-rang-instagram-zai-%5B%3F%5D-bai-duo-mo-yong-hu-bao-zha-hou-wen-ding-yun-xing/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/05/22/arch%2Czai-jian/">Arch，再见</a></h1>
     
     
@@ -116,7 +172,7 @@
   
   
     <footer>
-      <a rel="full-article" href="/blog/2013/05/22/arch%2Czai-jian/">Read on &rarr;</a>
+      <a rel="full-article" href="/blog/2013/05/22/arch%2Czai-jian/">阅读全文 &rarr;</a>
     </footer>
   
 
@@ -715,12 +771,21 @@
     <section>
   <h1>Categories</h1>
   <ul id="categories">
-    <li class='category'><a href='/blog/categories/linux/'>Linux (1)</a></li>
+    <li class='category'><a href='/blog/categories/instagram/'>Instagram (1)</a></li>
+<li class='category'><a href='/blog/categories/linux/'>Linux (1)</a></li>
+<li class='category'><a href='/blog/categories/移动互联网/'>移动互联网 (1)</a></li>
 
   </ul>
-</section>Included file &#8216;asides/recent_comments.html&#8217; not found in _includes directory<section>
+</section><section>
+  <h1>Recent Comments</h1>
+  <div id="dsq-recentcomments" class="dsq-widget"><script type="text/javascript" src="http://disqus.com/forums/11it/recent_comments_widget.js?hide_avatars=1"></script></div>
+</section><section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/05/22/ru-he-rang-instagram-zai-%5B%3F%5D-bai-duo-mo-yong-hu-bao-zha-hou-wen-ding-yun-xing/">如何让 Instagram 在一百多万用户爆炸后稳定运行</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/05/22/arch%2Czai-jian/">Arch，再见</a>
