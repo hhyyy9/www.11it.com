@@ -190,6 +190,26 @@
        tanx_h = document.getElementsByTagName("head")[0];
        if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
   </script>
+  
+  <script type="text/javascript">
+  (function(win,doc){
+  var s = doc.createElement("script"), h = doc.getElementsByTagName("head")[0];
+  if (!win.alimamatk_show) {
+  s.charset = "gbk";
+  s.async = true;
+  s.src = "http://a.alimama.cn/tkapi.js";
+  h.insertBefore(s, h.firstChild);
+  }
+  var o = {
+  pid: "mm_21701886_4042037_13142461",
+  appkey: "",
+  unid: ""
+  }
+  win.alimamatk_onload = win.alimamatk_onload || [];
+  win.alimamatk_onload.push(o);
+  })(window,document);
+  </script>
+  
 </section>
   
 </aside>
