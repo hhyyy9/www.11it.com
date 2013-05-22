@@ -4,7 +4,7 @@
   <title><![CDATA[Category: iOS开发 | 11IT]]></title>
   <link href="http://www.11it.com/blog/categories/ioskai-fa/atom.xml" rel="self"/>
   <link href="http://www.11it.com/"/>
-  <updated>2013-05-22T15:56:51+08:00</updated>
+  <updated>2013-05-22T16:11:14+08:00</updated>
   <id>http://www.11it.com/</id>
   <author>
     <name><![CDATA[Jacky]]></name>
@@ -12,6 +12,84 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[再见，viewDidUnload方法]]></title>
+    <link href="http://www.11it.com/blog/2013/05/22/zai-jian-%2Cviewdidunloadfang-fa/"/>
+    <updated>2013-05-22T15:59:00+08:00</updated>
+    <id>http://www.11it.com/blog/2013/05/22/zai-jian-,viewdidunloadfang-fa</id>
+    <content type="html"><![CDATA[<h3>前言</h3>
+
+<p>我在去年的一篇文章《iOS5中UIViewController的新方法》中介绍了iOS5引入的关于ViewController的新方法。但是现在如果运行该文章中的Sample代码的话，你会发现Log中不会再出现viewDidUnload方法被调用的记录。这是因为在iOS6中，viewDidUnload回调方法被Deprecated掉了。查看苹果的文档，可以看到如下的说明。</p>
+
+<!-- more -->
+
+
+<p><img src="http://ww1.sinaimg.cn/large/70e1c5f8gw1e4x4y97jccj20h1051aaa.jpg" alt="image" /></p>
+
+<p>那么，原本在viewDidUnload中的代码应该怎么处理？在iOS6中，又应该怎么处理内存警告？带着这些问题，我查找了一些资料，在此分享给大家。</p>
+
+<h3>分析</h3>
+
+<p>在iOS4和iOS5系统中，当内存不足，应用收到Memory warning时，系统会自动调用当前没在界面上的ViewController的viewDidUnload方法。 通常情况下，这些未显示在界面上的ViewController是UINavigationController Push栈中未在栈顶的ViewController，以及UITabBarViewController中未显示的子ViewController。这些View Controller都会在Memory Warning事件发生时，被系统自动调用viewDidUnload方法。</p>
+
+<p>在iOS6中，由于viewDidUnload事件在iOS6下任何情况都不会被触发，所以苹果在文档中建议，应该将回收内存的相关操作移到另一个回调函数：didReceiveMemoryWarning 中。但是如果你仅仅是把以前写到viewDidUnload函数中的代码移动到didReceiveMemoryWarning函数中，那么你就错了。以下是一个 错误的示例代码 ：</p>
+
+<p>```
+&ndash; (void)didReceiveMemoryWarning {</p>
+
+<pre><code>[super didReceiveMemoryWarning];
+if([self isViewLoaded] &amp;&amp; ![[self view] window]) {
+    [self setView:nil];
+}
+</code></pre>
+
+<p>}
+```</p>
+
+<ol>
+<li>UIView有一个CALayer的成员变量，CALayer是具体用于将自己画到屏幕上的。如下图所示：</li>
+</ol>
+
+
+<p><img src="http://ww1.sinaimg.cn/large/70e1c5f8gw1e4x52sbj5dj20hb06mjrs.jpg" alt="image" /></p>
+
+<ol>
+<li><p>CALayer是一个bitmap图象的容器类，当UIView调用自身的drawRect时，CALayer才会创建这个bitmap图象类。</p></li>
+<li><p>具体占内存的其实是一个bitmap图象类，CALayer只占48bytes, UIView只占96bytes。而一个iPad的全屏UIView的bitmap类会占到12M的大小！</p></li>
+<li><p>在iOS6时，当系统发出MemoryWarning时，系统会自动回收bitmap类。但是不回收UIView和CALayer类。这样即回收了大部分内存，又能在需要bitmap类时，通过调用UIView的drawRect: 方法重建。</p></li>
+</ol>
+
+
+<h3>内存优化</h3>
+
+<p>另外文章中还提到苹果的操作系统对此做的一个内存优化技巧，解释如下：</p>
+
+<ol>
+<li><p>当一段内存被分配时，它会被标记成“In use“, 以防止被重复使用。当内存被释放时，这段内存会被标记成”Not in use”，这样，在有新的内存申请时，这块内存就可能被分配给其它变量。</p></li>
+<li><p>CALayer包括的具体的bitmap内容的私有成员变量类型为CABackingStore， 当收到MemroyWarning时， CABackingStore类型的内存区会被标记成volatile类型（这里的volatile和 C以及Java语言的volatile不是一个意思），volatile表示，这块内存可能被再次被原变量重用。</p></li>
+</ol>
+
+
+<p>这样，有了上面的优化后，当收到Memoy Warning时，虽然所有的CALayer所包含的bitmap内存都被标记成volatile了，但是只要这块内存没有再次被复用，那么当需要重建bitmap内存时， 它就可以直接被复用，而避免了再次调用 UIView的 drawRect: 方法。</p>
+
+<h3>总结</h3>
+
+<p>所以，简单来说，对于iOS6，你不需要做任何以前viewDidUnload的事情，更不需要把以前viewDidUnload的代码移动到 didReceiveMemoryWarning方法中。</p>
+
+<blockquote>
+引用WWDC 2012 中的一段话来给viewDidUnload说再见：
+
+The method viewWillUnload and viewDidUnload. We’re not going to call them anymore. I mean, there’s kind of a cost-benifit equation and analysis that we went through. In the early days, there was a real performance need for us to ensure that on memory warnings we unloaded views. There was all kinds of graphics and backing stores and so forth that would also get unloaded. We now unload those independently of the view, so it isn’t that big of a deal for us for those to be unloaded, and there were so many bugs where there would be pointers into。
+</blockquote>
+
+
+<h3>参考链接</h3>
+
+<p>View Controller Lifecycle in iOS 6
+CALayer Internals: Contents</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Objective-C的新特性]]></title>
